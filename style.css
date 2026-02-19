@@ -1,0 +1,631 @@
+:root {
+    --bg-main: #050812;
+    --bg-card: #101826;
+    --bg-card-soft: #151e2e;
+    --accent: #1abc9c;
+    --accent-soft: rgba(26, 188, 156, 0.16);
+    --accent-strong: #0fbf7f;
+    --accent-gold: #f1c40f;
+    --text-main: #f7f9fc;
+    --text-muted: #a7b3c7;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --danger: #ff5a79;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 10px;
+}
+
+/* Global */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 10% 20%, #132437 0, transparent 55%),
+        radial-gradient(circle at 80% 0, #1a304f 0, transparent 55%),
+        radial-gradient(circle at 0 80%, #0f1927 0, transparent 60%),
+        radial-gradient(circle at 80% 80%, #101b29 0, transparent 60%),
+        var(--bg-main);
+}
+
+/* Page shell */
+
+.page-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top bar */
+
+.top-bar {
+    padding: 18px 16px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    font-size: 28px;
+}
+
+.brand-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.author a {
+    color: var(--accent-strong);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.author a:hover {
+    text-decoration: underline;
+}
+
+/* App card */
+
+.app-card {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 26px 24px 30px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), transparent);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Islamic graffiti banner */
+
+.islamic-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px 14px;
+    margin-bottom: 18px;
+    border-radius: var(--radius-md);
+    background:
+        radial-gradient(circle at 0 0, rgba(241, 196, 15, 0.22), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(26, 188, 156, 0.24), transparent 55%),
+        rgba(3, 8, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.banner-symbol {
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(241, 196, 15, 0.22), transparent 60%);
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.banner-arabic {
+    font-family: "Reem Kufi Fun", "Amiri", serif;
+    font-size: 1.35rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-gold);
+}
+
+.banner-english {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* Panels */
+
+.panel {
+    border-radius: var(--radius-md);
+    background: radial-gradient(circle at top left, rgba(26, 188, 156, 0.12), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(241, 196, 15, 0.1), transparent 50%),
+        var(--bg-card);
+    padding: 18px 18px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.panel-controls {
+    text-align: left;
+}
+
+.panel-today {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.panel-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.panel-subtitle {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+/* Form controls */
+
+.form-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+}
+
+.custom-select {
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background-color: rgba(8, 16, 32, 0.96);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.custom-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent-soft), 0 0 0 4px rgba(26, 188, 156, 0.18);
+}
+
+/* Duas */
+
+.dua-box {
+    margin-top: 4px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-card-soft);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.88rem;
+    color: var(--text-main);
+}
+
+.dua-meaning {
+    font-weight: 600;
+}
+
+/* Author highlight */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.author span {
+  opacity: 0.75;
+}
+
+/* Make the name pop */
+.author a {
+  font-weight: 800;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  letter-spacing: 0.2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Hover effect */
+.author a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.18);
+}
+
+/* Small icon before name (optional) */
+.author a::before {
+  content: "✨ ";
+}
+
+
+.arabic-text {
+    display: block;
+    margin-top: 2px;
+    font-family: "Amiri", serif;
+    font-size: 1rem;
+    color: rgb(26 188 156);;
+}
+
+.dua-translation {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+}
+
+/* Today panel */
+
+.today-main {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.today-sub {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+}
+
+.today-times {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    background-color: rgba(0, 0, 0, 0.18);
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+.today-time {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.today-time + .today-time {
+    margin-top: 4px;
+}
+
+.today-time.sehri {
+    color: var(--accent-strong);
+    font-weight: 600;
+}
+
+.today-time.iftar {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+/* Countdown */
+
+.countdown-box {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    background-color: rgba(4, 10, 20, 0.9);
+    border: 1px solid rgba(26, 188, 156, 0.3);
+    font-size: 0.9rem;
+}
+
+#sehriCountdown,
+#iftarCountdown {
+    margin: 4px 0;
+    font-weight: 500;
+    color: var(--accent-strong);
+}
+
+/* Summary info (Year + District) */
+
+.calendar-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.calendar-summary > div {
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    background-color: rgba(9, 14, 27, 0.92);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.summary-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.35;
+}
+
+/* Export button */
+
+.btn-export {
+    align-self: flex-start;
+    border-radius: 999px;
+    border: none;
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: linear-gradient(130deg, var(--accent-strong), #16a085);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(10, 143, 108, 0.4);
+}
+
+.btn-export:hover {
+    filter: brightness(1.05);
+}
+
+/* Calendar section */
+
+.calendar-section {
+    margin-top: 26px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.calendar-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.calendar-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Table cards */
+
+.table-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 14px 14px 16px;
+    border: 1px solid var(--border-subtle);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.table-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.table-card-header h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.table-card-header p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Arabic graffiti under table titles */
+.table-graffiti-arabic {
+    font-family: "Reem Kufi Fun", "Amiri", serif;
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.05em;
+}
+
+.table-graffiti-sub {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Decorative strip above each table */
+
+.table-graffiti-strip {
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #00b894, #0984e3);
+    margin: 4px 0 8px;
+    opacity: 0.85;
+}
+
+.strip-maghfirah {
+    background: linear-gradient(90deg, #fdcb6e, #e17055);
+}
+
+.strip-najah {
+    background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+}
+
+.table-phase-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.phase-rahmah {
+    background: linear-gradient(135deg, #00b894, #0984e3);
+}
+.phase-maghfirah {
+    background: linear-gradient(135deg, #fdcb6e, #e17055);
+}
+.phase-najah {
+    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+}
+
+/* Table */
+
+.table-wrapper {
+    border-radius: 14px;
+    background-color: rgba(5, 10, 23, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+.ramadan-table thead {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent);
+}
+
+.ramadan-table thead th {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.ramadan-table tbody td {
+    font-size: 0.8rem;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    color: var(--text-main);
+    white-space: nowrap;
+}
+
+.ramadan-table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.ramadan-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+.ramadan-table tbody tr:hover {
+    background-color: rgba(26, 188, 156, 0.12);
+}
+
+.ramadan-table tbody tr.highlight-today {
+    background-color: rgba(26, 188, 156, 0.32) !important;
+    color: #050812 !important;
+    font-weight: 600;
+}
+
+/* Footer */
+
+.site-footer {
+    margin-top: auto;
+    padding: 16px 0 18px;
+    background-color: rgba(1, 4, 10, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    gap: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .app-card {
+        padding: 20px 16px 26px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .author {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .panel {
+        padding: 14px 14px 16px;
+    }
+
+    .ramadan-table thead th,
+    .ramadan-table tbody td {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .brand-title {
+        font-size: 1rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.78rem;
+    }
+
+    .calendar-summary {
+        grid-template-columns: 1fr;
+    }
+}
